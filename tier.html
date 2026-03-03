@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tier</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+    <div class="logo">
+        <img src="logo.png" alt="Company Logo" width="150px" height="130px">
+    </div>
+
+    <ul class="nav-links">
+        <div class="button-div">
+            <button onclick="homePage()" class="menu-button">Home</button>
+        </div>
+        <div class="button-div">
+            <button onclick="tierPage()" class="menu-button">Tier Subcription</button>    
+        </div>
+        <div class="button-div">
+            <button onclick="investorPage()" class="menu-button">Investor Info</button>    
+        </div>
+    </ul>
+    </nav>
+
+    <div class="vert-container">
+        <div class="welcome">
+            <h2 id="tier-display"></h2>
+        </div>
+
+        <div class="box">
+            <h2>Enter your tier upgrade code</h2>
+            <p class="error" id="error" style="display:none">Invalid Code</p>
+            <input type="text" id="Code" placeholder="Code">
+            <button onclick="submit()">Submit</button>
+        </div>
+    </div>
+    
+
+<script>
+    
+    const allowed = ["alice", "charlie"];
+    const params = new URLSearchParams(window.location.search);
+    const user = params.get("user");
+    const tier = params.get("tier");
+
+    if (!allowed.includes(user)) {
+        window.location.href = "login.html";
+    } else {
+        document.getElementById("tier-display").textContent = "You are currently " + tier + " tier";
+    }
+
+    function submit() {
+        document.getElementById("error").style.display = "block";
+    }
+
+    function homePage(){
+        window.location.href = "home.html?user=" + user + "&tier=" + tier;
+    }
+    function tierPage(){
+        window.location.href = "tier.html?user=" + user + "&tier=" + tier;
+    }
+    function investorPage(){
+        window.location.href = "investor_info.html?user=" + user + "&tier=" + tier;
+    }
+    
+</script>
+</body>
+</html>

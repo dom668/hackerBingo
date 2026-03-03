@@ -1,11 +1,11 @@
 bingo squares: 
-access someone elses account
-unlock the secret image
-log in to the admin account 'admin@organisation.com'
-delete the users table from the database
-log into the owners portal
-give yourself an age greater than 100
-get a 500 internal sever error
+access the account that belongs to 'charlie'--------------------------------------------------------DONE
+unlock the restricted investor info-----------------------------------------------------------------DONE
+log in to the admin account 'admin@organisation.com'---------------------------
+delete the users table from the database---------------------------------------
+log into the owners portal (using SQL injection)-------------------------------
+give yourself an age greater than 100------------------------------------------
+get a 500 internal sever error-------------------------------------------------
 
 
 URL PARAMS:
@@ -31,10 +31,21 @@ DROP TABLE users; (The malicious command that deletes the entire user database).
 
 
 COMMENT IN THE SOURCE CODE:
-// owners login = "default", "123pass" remmeber to change this.
+// owners login = "default", "123pass" remmeber to change this. (have a front end and back end folder so they can go through all the source code)
 
 UNDERFLOW ERROR:
 enter -1 as your age - underflows so you get really old
 
 NULL POINTER ERROR:
 drop down menu with an associated "go" button, don't select an option and press go and get a 500 internal sever error
+
+
+
+
+
+
+USER ACCOUNTS SO FAR
+LOGIN GIVEN TO THE KIDS - alice  password123
+
+
+charlie  qwerty
