@@ -1,0 +1,40 @@
+bingo squares: 
+access someone elses account
+unlock the secret image
+log in to the admin account 'admin@organisation.com'
+delete the users table from the database
+log into the owners portal
+give yourself an age greater than 100
+get a 500 internal sever error
+
+
+URL PARAMS:
+can change the username to access someone elses account
+
+can change the "subcription level" to access more info ("upgrade to gold for £55 to see secret image" - just change the url parameter to gold)
+
+SQL FORM INJECTION:
+you know the email but dont know the password, use SQL injection to get in
+e.g. SELECT * FROM users WHERE email = 'user@example.com' AND password = '' OR '1'='1';
+
+delete the users table from the database
+vulnerable search feature where the backend code looks like this:
+SELECT * FROM products WHERE category = '$user_input';
+enter this
+electronics'; DROP TABLE users;--
+
+How the Database Sees It:
+The database receives one string but interprets it as three distinct commands:
+SELECT * FROM products WHERE category = 'electronics'; (The original intended query, now terminated early).
+DROP TABLE users; (The malicious command that deletes the entire user database).
+-- (The comment symbol that ignores any leftover code the developer wrote, like a closing quote).
+
+
+COMMENT IN THE SOURCE CODE:
+// owners login = "default", "123pass" remmeber to change this.
+
+UNDERFLOW ERROR:
+enter -1 as your age - underflows so you get really old
+
+NULL POINTER ERROR:
+drop down menu with an associated "go" button, don't select an option and press go and get a 500 internal sever error
