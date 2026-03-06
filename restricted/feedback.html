@@ -74,11 +74,11 @@
         const ranking = document.getElementById("ranking").value;
         document.getElementById("error").style.display = "none";
         document.getElementById("success").style.display = "none";
-        if (ranking > 10) {
+        if (ranking > 10 || ranking > 10.0) {
             document.getElementById("error").innerText = "Please submit a ranking out of ten";
             document.getElementById("error").style.display = "block";
         }
-        if (ranking < 11 && ranking > -1) {
+        if (ranking <= 10 && ranking > -1) {
             document.getElementById("success").innerText = "Thank you for rating us " + ranking + " / 10.";
             document.getElementById("success").style.display = "block";
         }
