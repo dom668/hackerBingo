@@ -1,11 +1,14 @@
 bingo squares: 
 access the account that belongs to 'charlie'--------------------------------------------------------DONE
 unlock the restricted investor info-----------------------------------------------------------------DONE
-log in to the admin account 'admin@organisation.com'---------------------------
+
 delete the users table from the database---------------------------------------
 log into the owners portal (using SQL injection)-------------------------------
-give yourself an age greater than 100------------------------------------------
+
+rank the service more than ten out of ten----------------------------------------------------------DONE
 get a 500 internal sever error-------------------------------------------------
+
+access the utils page (hidden endpoints)---------------------------------------------
 
 
 URL PARAMS:

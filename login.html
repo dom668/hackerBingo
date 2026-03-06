@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="restricted/styles.css">
     
 </head>
 <body>
 
 <div>
-    <img src="logo.png" width="363px" height="200px"></img>
+    <img src="restricted/logo.png" width="363px" height="200px"></img>
 
     <div class="box">
         <h2>Batwest Bank Login</h2>
@@ -28,7 +28,7 @@
         const u = document.getElementById("username").value;
         const p = document.getElementById("password").value;
         if (users[u] && users[u] === p) {
-            window.location.href = "home.html?user=" + u + "&tier=silver";
+            window.location.href = "restricted/home.html?user=" + u + "&tier=silver";
         } else {
             document.getElementById("error").style.display = "block";
         }

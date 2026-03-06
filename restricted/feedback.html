@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Feedback</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+    <div class="logo">
+        <img src="logo.png" alt="Company Logo" width="150px" height="130px">
+    </div>
+
+    <ul class="nav-links">
+        <div>
+            <div class="button-div">
+                <button onclick="homePage()" class="menu-button">Home</button>
+            </div>
+            <div class="button-div">
+                <button onclick="tierPage()" class="menu-button">Tier Subcription</button>    
+            </div>
+        </div>
+        
+        <div>
+            <div class="button-div">
+                <button onclick="investorPage()" class="menu-button">Investor Info</button>    
+            </div>
+            <div class="button-div">
+                <button onclick="feedbackPage()" class="menu-button">Feedback</button>    
+            </div>
+        </div>
+        
+    </ul>
+    </nav>
+
+    <div class="vert-container">
+        <div class="welcome">
+            <h2>Feedback Page</h2>
+        </div>
+
+        <div class="box">
+            <h2>Please rank our services out of ten</h2>
+            <p class="error" id="error" style="display:none"></p>
+            <p class="success" id="success" style="display:none"></p>
+            <input type="number" id="ranking" placeholder="Ranking out of ten">
+            <button onclick="submit()">Submit</button>
+        </div>
+    </div>
+    
+
+<script>
+    
+    const allowed = ["alice", "charlie"];
+    const params = new URLSearchParams(window.location.search);
+    const user = params.get("user");
+    const tier = params.get("tier");
+
+    if (!allowed.includes(user)) {
+        window.location.href = "login.html";
+    }
+
+    function submit() {
+        const ranking = document.getElementById("ranking").value;
+        document.getElementById("error").style.display = "none";
+        document.getElementById("success").style.display = "none";
+        if (ranking > 10) {
+            document.getElementById("error").innerText = "Please submit a ranking out of ten";
+            document.getElementById("error").style.display = "block";
+        }
+        if (ranking < 11 && ranking > -1) {
+            document.getElementById("success").innerText = "Thank you for rating us " + ranking + " / 10.";
+            document.getElementById("success").style.display = "block";
+        }
+        if (ranking < 0){
+            document.getElementById("success").innerText = "Thank you for rating us 9007199254740991 / 10";
+            document.getElementById("success").style.display = "block";
+        }
+        
+    }
+
+    function homePage(){
+        window.location.href = "home.html?user=" + user + "&tier=" + tier;
+    }
+    function tierPage(){
+        window.location.href = "tier.html?user=" + user + "&tier=" + tier;
+    }
+    function investorPage(){
+        window.location.href = "investor_info.html?user=" + user + "&tier=" + tier;
+    }
+    function feedbackPage(){
+        window.location.href = "feedback.html?user=" + user + "&tier=" + tier;
+    }
+    
+</script>
+</body>
+</html>

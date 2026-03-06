@@ -14,15 +14,24 @@
     </div>
 
     <ul class="nav-links">
-        <div class="button-div">
-            <button onclick="homePage()" class="menu-button">Home</button>
+        <div>
+            <div class="button-div">
+                <button onclick="homePage()" class="menu-button">Home</button>
+            </div>
+            <div class="button-div">
+                <button onclick="tierPage()" class="menu-button">Tier Subcription</button>    
+            </div>
         </div>
-        <div class="button-div">
-            <button onclick="tierPage()" class="menu-button">Tier Subcription</button>    
+        
+        <div>
+            <div class="button-div">
+                <button onclick="investorPage()" class="menu-button">Investor Info</button>    
+            </div>
+            <div class="button-div">
+                <button onclick="feedbackPage()" class="menu-button">Feedback</button>    
+            </div>
         </div>
-        <div class="button-div">
-            <button onclick="investorPage()" class="menu-button">Investor Info</button>    
-        </div>
+        
     </ul>
     </nav>
 
@@ -30,7 +39,7 @@
         <h2 id="name-display"></h2>
         <p>You are now logged into your Batwest bank account.</p>
 
-        <a href="login.html">← Back to login</a>
+        <a href="../login.html">← Back to login</a>
 
     </div>
 
@@ -55,6 +64,9 @@
     }
     function investorPage(){
         window.location.href = "investor_info.html?user=" + user + "&tier=" + tier;
+    }
+    function feedbackPage(){
+        window.location.href = "feedback.html?user=" + user + "&tier=" + tier;
     }
     
 </script>
