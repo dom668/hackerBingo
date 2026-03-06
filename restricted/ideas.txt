@@ -8,7 +8,7 @@ log into the owners portal (using SQL injection)-------------------------------
 rank the service more than ten out of ten----------------------------------------------------------DONE
 get a 500 internal sever error-------------------------------------------------
 
-access the utils page (hidden endpoints)---------------------------------------------
+access the stats page (hidden endpoints)---------------------------------------------
 
 
 URL PARAMS:
