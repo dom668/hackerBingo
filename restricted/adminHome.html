@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Search</title>
+    <title>Admin Home</title>
     <link rel="stylesheet" href="styles.css">
 
 </head>
@@ -15,68 +15,27 @@
     </div>
 
     <ul class="nav-links">
-        <div>
-            <div class="button-div">
-                <button onclick="homePage()" class="menu-button">Home</button>
-            </div>
-            <div class="button-div">
-                <button onclick="tierPage()" class="menu-button">Tier Subcription</button>    
-            </div>
+        <div class="button-div">
+            <button onclick="homePage()" class="menu-button">Customer Home</button>
         </div>
-        
-        <div>
-            <div class="button-div">
-                <button onclick="investorPage()" class="menu-button">Investor Info</button>    
-            </div>
-            <div class="button-div">
-                <button onclick="feedbackPage()" class="menu-button">Feedback</button>    
-            </div>
-        </div>
-        <div>
-            <div class="button-div">
-                <button onclick="searchPage()" class="menu-button">Search</button>    
-            </div>
-            <div class="button-div">
-                <button onclick="admin()" class="menu-button">Admin</button>    
-            </div>
-        </div>
-        
     </ul>
     </nav>
 
     <div class="vert-container">
-        <div class="welcome">
-            <h2>Search Page</h2>
-        </div>
-
-        <div class="search-box">
-        <select id="stat-selector">
-            <option value=""></option>
-            <option value="loans">Loan info</option>
-            <option value="morgates">Mortage Info</option>
-            <option value="apr">APR Rates</option>
-            <option value="savings">Saving Info</option>
-        </select>
         
-        <button type="button" id="go-btn" onclick=handleGo()>GO</button>
-        </div>
-        <div>
-            <p id="searchOutput"></p>
-            <p class="error" id="error" style="display:none"></p>
-        </div>
+        <img src="adminDashboard.png"></img>
     </div>
 
     </div>
 
 <script>
     
-    const allowed = ["alice", "charlie"];
+    const allowed = ["admin1"];
     const params = new URLSearchParams(window.location.search);
     const user = params.get("user");
-    const tier = params.get("tier");
 
     if (!allowed.includes(user)) {
-        window.location.href = "login.html";
+        window.location.href = "../login.html";
     }
 
     function handleGo(){
@@ -105,24 +64,8 @@
     }
 
     function homePage(){
-        window.location.href = "home.html?user=" + user + "&tier=" + tier;
+        window.location.href = "home.html?user=alice&tier=sliver";
     }
-    function tierPage(){
-        window.location.href = "tier.html?user=" + user + "&tier=" + tier;
-    }
-    function investorPage(){
-        window.location.href = "investor_info.html?user=" + user + "&tier=" + tier;
-    }
-    function feedbackPage(){
-        window.location.href = "feedback.html?user=" + user + "&tier=" + tier;
-    }
-    function searchPage(){
-        window.location.href = "search.html?user=" + user + "&tier=" + tier;
-    }
-    function admin(){
-        window.location.href = "adminLogin.html?user=" + user + "&tier=" + tier;
-    }
-    
 </script>
 </body>
 </html>

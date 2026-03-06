@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Login</title>
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+<body>
+
+<div>
+    <img src="logoAdmin.png" width="363px" height="200px"></img>
+
+    <div class="box">
+        <h2>Batwest Bank Admin Login</h2>
+        <p class="error" id="error" style="display:none">Wrong username or password.</p>
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+        <button onclick="login()">Log In</button>
+    </div>
+</div>
+
+
+<script>
+    const users = { admin1: "tru3pa55w0rd"};
+
+    function login() {
+        const u = document.getElementById("username").value;
+        const p = document.getElementById("password").value;
+        // put the conditions here
+        if ((u == "admin1") && (p == "' OR TRUE" || p == "'OR True")) {
+            window.location.href = "adminHome.html?user=" + u;
+        } else {
+            document.getElementById("error").style.display = "block";
+        }
+    }
+</script>
+</body>
+</html>

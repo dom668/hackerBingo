@@ -36,7 +36,7 @@
                 <button onclick="searchPage()" class="menu-button">Search</button>    
             </div>
             <div class="button-div">
-                <button onclick="none()" class="menu-button">Spare</button>    
+                <button onclick="admin()" class="menu-button">Admin</button>    
             </div>
         </div>
         
@@ -78,6 +78,9 @@
     }
     function searchPage(){
         window.location.href = "search.html?user=" + user + "&tier=" + tier;
+    }
+    function admin(){
+        window.location.href = "adminLogin.html?user=" + user + "&tier=" + tier;
     }
     
 </script>
