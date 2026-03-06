@@ -31,6 +31,14 @@
                 <button onclick="feedbackPage()" class="menu-button">Feedback</button>    
             </div>
         </div>
+        <div>
+            <div class="button-div">
+                <button onclick="searchPage()" class="menu-button">Search</button>    
+            </div>
+            <div class="button-div">
+                <button onclick="none()" class="menu-button">Spare</button>    
+            </div>
+        </div>
         
     </ul>
     </nav>
@@ -77,6 +85,9 @@
     }
     function feedbackPage(){
         window.location.href = "feedback.html?user=" + user + "&tier=" + tier;
+    }
+    function searchPage(){
+        window.location.href = "search.html?user=" + user + "&tier=" + tier;
     }
     
 </script>

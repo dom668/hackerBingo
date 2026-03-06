@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+
+    <nav class="navbar">
+    <div class="logo">
+        <img src="logo.png" alt="Company Logo" width="150px" height="130px">
+    </div>
+
+    <ul class="nav-links">
+        <div>
+            <div class="button-div">
+                <button onclick="homePage()" class="menu-button">Home</button>
+            </div>
+            <div class="button-div">
+                <button onclick="tierPage()" class="menu-button">Tier Subcription</button>    
+            </div>
+        </div>
+        
+        <div>
+            <div class="button-div">
+                <button onclick="investorPage()" class="menu-button">Investor Info</button>    
+            </div>
+            <div class="button-div">
+                <button onclick="feedbackPage()" class="menu-button">Feedback</button>    
+            </div>
+        </div>
+        <div>
+            <div class="button-div">
+                <button onclick="searchPage()" class="menu-button">Search</button>    
+            </div>
+            <div class="button-div">
+                <button onclick="none()" class="menu-button">Spare</button>    
+            </div>
+        </div>
+        
+    </ul>
+    </nav>
+
+    <div class="vert-container">
+        <div class="welcome">
+            <h2>Search Page</h2>
+        </div>
+
+        <div class="search-box">
+        <select id="stat-selector">
+            <option value=""></option>
+            <option value="loans">Loan info</option>
+            <option value="morgates">Mortage Info</option>
+            <option value="apr">APR Rates</option>
+            <option value="savings">Saving Info</option>
+        </select>
+        
+        <button type="button" id="go-btn" onclick=handleGo()>GO</button>
+        </div>
+        <div>
+            <p id="searchOutput"></p>
+            <p class="error" id="error" style="display:none"></p>
+        </div>
+    </div>
+
+    </div>
+
+<script>
+    
+    const allowed = ["alice", "charlie"];
+    const params = new URLSearchParams(window.location.search);
+    const user = params.get("user");
+    const tier = params.get("tier");
+
+    if (!allowed.includes(user)) {
+        window.location.href = "login.html";
+    }
+
+    function handleGo(){
+        const selector = document.getElementById("stat-selector")
+        const selectedValue = selector.value;
+
+        document.getElementById("searchOutput").innerText = "";
+        document.getElementById("error").style.display = "none";
+        
+        if (selectedValue == "loans"){
+            document.getElementById("searchOutput").innerText = "A loan is essentially a sum of money that is borrowed from a lender, which can be a financial institution like a bank or credit union, or even an individual. The borrower is obligated to repay the principal amount along with interest.";
+        }
+        if (selectedValue == "morgates"){
+            document.getElementById("searchOutput").innerText = "A mortgage is a loan used to purchase real estate, where the property itself serves as collateral until the loan is fully repaid";
+        }
+        if (selectedValue == "apr"){
+            document.getElementById("searchOutput").innerText = "APR stands for Annual Percentage Rate, representing the total yearly cost of borrowing, including interest and certain fees. Definition and Purpose APR, or Annual Percentage Rate, is a standardized measure used to show the total cost of borrowing money over a year. It includes the interest rate plus any compulsory fees associated with a loan, credit card, or other financial product, making it easier to compare different offers on a like-for-like basis. ";
+        }
+        if (selectedValue == "savings"){
+            document.getElementById("searchOutput").innerText = "Savings refer to the portion of disposable income that remains after all expenses and obligations are met and is deliberately reserved for future use. This can include money set aside for emergencies, major purchases, retirement, or other financial goals.";
+        }
+        if (selectedValue == ""){
+            document.getElementById("error").style.display = "block";
+            document.getElementById("error").innerText = "500: Internal Server Error. Error: Unexpected 'Null' value in search_query_string";
+        }
+    }
+
+    function homePage(){
+        window.location.href = "home.html?user=" + user + "&tier=" + tier;
+    }
+    function tierPage(){
+        window.location.href = "tier.html?user=" + user + "&tier=" + tier;
+    }
+    function investorPage(){
+        window.location.href = "investor_info.html?user=" + user + "&tier=" + tier;
+    }
+    function feedbackPage(){
+        window.location.href = "feedback.html?user=" + user + "&tier=" + tier;
+    }
+    function searchPage(){
+        window.location.href = "search.html?user=" + user + "&tier=" + tier;
+    }
+    
+</script>
+</body>
+</html>
