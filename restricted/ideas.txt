@@ -2,13 +2,53 @@ bingo squares:
 access the account that belongs to 'charlie'--------------------------------------------------------DONE
 unlock the restricted investor info-----------------------------------------------------------------DONE
 
-using the tier page, delete the users table from the database (SQL injection)-----------------------DONE
+delete the users table from the database (SQL injection)-------------------------------------------- (do in the tier upgrade tab)DONE
 log into the admin portal (using SQL injection)-----------------------------------------------------DONE
 
 rank the service more than ten out of ten-----------------------------------------------------------DONE
 cause a 500 internal sever error--------------------------------------------------------------------DONE
 
 access the stats page (hidden endpoints)------------------------------------------------------------DONE
+
+
+
+GIVEN:
+alice
+password123
+
+admin username - admin1
+admin password - unknown
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 URL PARAMS:
@@ -24,7 +64,7 @@ delete the users table from the database
 vulnerable search feature where the backend code looks like this:
 SELECT * FROM products WHERE category = '$user_input';
 enter this
-'; DROP TABLE users;--
+electronics'; DROP TABLE users;--
 
 How the Database Sees It:
 The database receives one string but interprets it as three distinct commands:
