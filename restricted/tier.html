@@ -77,7 +77,7 @@
         document.getElementById("error").style.display = "none";
         document.getElementById("sql").style.display = "none";
 
-        if (code == "'; DROP TABLE users;--"){
+        if ((code == "''; DROP TABLE users;") || (code == "''; DROP TABLE users")){
             console.log(code)
             document.getElementById("sql").style.display = "block";
         } else {
