@@ -27,8 +27,11 @@
     function login() {
         const u = document.getElementById("username").value;
         const p = document.getElementById("password").value;
+
+        const inject = p.slice(p.indexOf("'"))
+        console.log(inject)
         // put the conditions here
-        if ((u == "admin1") && (p == "'' OR TRUE" || p == "'' OR TRUE;" || p == "''OR True" || p == "''OR True;" || p == "'' OR 1=1" || p == "'' OR 1=1;")) {
+        if ((u == "admin1") && (inject == "' OR TRUE" || inject == "' OR TRUE;" || inject == "'OR TRUE;" || inject == "'OR TRUE" || inject == "'OR True" || inject == "' OR True" || inject == "'OR True;" || inject == "' OR True;")) {
             window.location.href = "adminHome.html?user=" + u;
         } else {
             document.getElementById("error").style.display = "block";

@@ -73,15 +73,14 @@
 
     function submit() {
         const code = document.getElementById("code").value
+        const inject = code.slice(code.indexOf(";"))
 
         document.getElementById("error").style.display = "none";
         document.getElementById("sql").style.display = "none";
 
-        if ((code == "''; DROP TABLE users;") || (code == "''; DROP TABLE users")){
-            console.log(code)
+        if ((inject == "; DROP TABLE users;") || (inject == "; DROP TABLE users")){
             document.getElementById("sql").style.display = "block";
         } else {
-            console.log(code)
             document.getElementById("error").style.display = "block";
         }
     }
